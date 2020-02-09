@@ -2,6 +2,8 @@
 
 The partial-Fourier induced Gibbs ringing is composed of ringings with two periods. This code removes partial-Fourier induced Gibbs ringing by applying [Kellner et al.'s](https://doi.org/10.1002/mrm.26054) algorithm twice.
 
+![An example of Gibbs ringing removal for PF = 6/8](./example.png)
+
 ## References
 * ** **
   - []
