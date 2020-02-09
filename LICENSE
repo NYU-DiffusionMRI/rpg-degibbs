@@ -14,13 +14,3 @@ right or licenses under any patents or patent application owned by NYU.
 5. The Software may only be used for non-commercial research and may not be used for clinical care.
 6. Any publication by Recipient of research involving the Software shall cite the references listed below.
 
-**Monte Carlo simulation**
-Fieremans, et al., NMR Biomed, 2010 (https://doi.org/10.1002/nbm.1577)
-Novikov, et al., Nature Physics, 2011 (https://doi.org/10.1038/nphys1936)
-Fieremans and Lee, NeuroImage 2018 (https://doi.org/10.1016/j.neuroimage.2018.06.046)
-
-**Random packing generation**
-Donev, et al., J Comput Phys, 2005 (https://doi.org/10.1016/j.jcp.2004.08.014)
-
-**Axonal diameter histogram in corpus callosum**
-Aboitiz, et al., Brain Research, 1992 (https://doi.org/10.1016/0006-8993(92)90178-C)
