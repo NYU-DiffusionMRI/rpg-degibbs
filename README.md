@@ -14,4 +14,4 @@ The partial-Fourier induced Gibbs ringing is composed of ringings with two perio
 * [Dmitry S Novikov](http://www.diffusion-mri.com/people/dmitry-novikov)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/leehhtw/monte-carlo-simulation-recipes/blob/example1/LICENSE) file for details
+This project is licensed under the [LICENSE](https://github.com/NYU-DiffusionMRI/monte-carlo-simulation-recipes/blob/example1/LICENSE).
