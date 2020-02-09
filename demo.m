@@ -3,12 +3,14 @@
 
 clear
 restoredefaultpath
+
+% Directory to this demo
 root = '.';
-addpath(genpath(fullfile(root,'lib_rpg')));
+addpath(genpath(fullfile(root,'lib')));
 
 %% Compile mex files
 rpg = rpgdegibbs();
-rpg.compilefiles(fullfile(root,'lib_rpg'));
+rpg.compilefiles(fullfile(root,'lib'));
 
 %% Demonstration
 
