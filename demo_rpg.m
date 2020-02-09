@@ -3,7 +3,7 @@
 
 clear
 restoredefaultpath
-root = '/Volumes/labspace/Honghsi/projects/degibbs_PF';
+root = '.';
 addpath(genpath(fullfile(root,'lib_rpg')));
 
 %% Compile mex files
