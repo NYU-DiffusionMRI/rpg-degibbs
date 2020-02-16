@@ -1,11 +1,11 @@
-classdef rpgdegibbs < handle
+classdef rpgdegibbs_s < handle
     
     properties (GetAccess = public, SetAccess = private)
         
     end
     
     methods (Access = public)
-        function this = rpgdegibbs()
+        function this = rpgdegibbs_s()
             
         end
         
@@ -22,35 +22,28 @@ classdef rpgdegibbs < handle
                 if dim==1
                     imgi = imgi.';
                 end
-
+                imgi = this.unring(imgi,params);
                 if pf==5/8
-%                     imgi = this.unring_y_4(imgi,params);
                     scale = 4;
                     for i = 1:scale
-                        imgi(:,i:scale:end) = this.unring(imgi(:,i:scale:end),params);
+                        imgi(:,i:scale:end) = this.unring_y(imgi(:,i:scale:end),params);
                     end
-                    imgi = this.unring_y(imgi,params);
                 elseif pf==6/8
-                    imgi = this.unring_y_2(imgi,params);
-%                     scale = 2;
-%                     for i = 1:scale
-%                         imgi(:,i:scale:end) = this.unring_y(imgi(:,i:scale:end),params);
-%                     end
+                    scale = 2;
+                    for i = 1:scale
+                        imgi(:,i:scale:end) = this.unring_y(imgi(:,i:scale:end),params);
+                    end
                 elseif pf==7/8
                     imgi = imresize(imgi,[nx,ny*3],'nearest');
-%                     imgi = this.unring_y_4(imgi,params);
                     scale = 4;
                     for i = 1:scale
-                        imgi(:,i:scale:end) = this.unring(imgi(:,i:scale:end),params);
+                        imgi(:,i:scale:end) = this.unring_y(imgi(:,i:scale:end),params);
                     end
                     imgi = imresize(imgi,[nx,ny],'nearest');
-                    imgi = this.unring_y(imgi,params);
                 elseif pf==1
-                    imgi = this.unring(imgi,params);
                 else
                     fprintf('Error: rpgdegibbs only supports PF = 5/8, 6/8, and 7/8.');
                 end
-%                 imgi = this.unring(imgi,params);
                 
                 if dim==1
                     imgi = imgi.';
@@ -79,7 +72,7 @@ classdef rpgdegibbs < handle
         function compilefiles(target)
             mex('-v','-L/usr/local/lib','-lfftw3','-I/usr/local/include/',sprintf('%s/ringRm.cpp',target),'-compatibleArrayDims','-outdir',target);
             mex('-v','-L/usr/local/lib','-lfftw3','-I/usr/local/include/',sprintf('%s/ringRm_y.cpp',target),'-compatibleArrayDims','-outdir',target);
-            mex('-v','-L/usr/local/lib','-lfftw3','-I/usr/local/include/',sprintf('%s/ringRm_y_2.cpp',target),'-compatibleArrayDims','-outdir',target);
+%             mex(sprintf('-v -L/usr/local/lib -lfftw3 -I/usr/local/include/ %s/ringRm_y.cpp -compatibleArrayDims',target));
         end
         
         function v = unring(v,params)
@@ -96,22 +89,6 @@ classdef rpgdegibbs < handle
             end
             v = double(v);
             v = ringRm_y(v,params);
-        end
-
-        function v = unring_y_2(v,params)
-            if nargin == 1
-                params = [1 3 20];
-            end
-            v = double(v);
-            v = ringRm_y_2(v,params);
-        end
-
-        function v = unring_y_4(v,params)
-            if nargin == 1
-                params = [1 3 20];
-            end
-            v = double(v);
-            v = ringRm_y_4(v,params);
         end
         
         function imgo = ifft2_mri(imgi)

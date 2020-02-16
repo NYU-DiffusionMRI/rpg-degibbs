@@ -1,9 +1,6 @@
 %% Removal of Partial-fourier induced Gibbs ringing (RPG)
 % Author: Hong-Hsi Lee, February 2020
-%
-% C++ codes are modified from the code based on local subvoxel-shifts by
-% Kellner et al. MRM 2016 (doi: 10.1002/mrm.26054)
-% (https://bitbucket.org/reisert/unring/src/master/)
+% C++ codes are modified from the code 
 
 clear
 restoredefaultpath
