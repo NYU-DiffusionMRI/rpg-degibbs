@@ -8,6 +8,7 @@ The partial-Fourier induced Gibbs ringing is composed of ringings of two interva
 * ** **
   - [Lee et al., Magnetic Resonance in Medicine 2021](http://doi.org/10.1002/mrm.28830)
   - [Kellner et al., Magnetic Resonance in Medicine 2016](https://doi.org/10.1002/mrm.26054)
+  - [Original local subvoxel-shfits](https://bitbucket.org/reisert/unring/src/master/)
 
 ## Authors
 * [Hong-Hsi Lee](https://leehhtw.github.io)
